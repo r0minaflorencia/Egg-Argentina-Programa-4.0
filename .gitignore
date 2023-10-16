@@ -1,0 +1,31 @@
+# Compiled class file #
+*.class
+
+# Log file #
+*.log
+
+# Package Files #
+*.jar
+*.zip
+*.rar
+
+# Virtual machine crash logs #
+hs_err_pid*
+replay_pid*
+
+# Ignored File Types #
+*.xml
+*.mf
+*.properties
+
+# Ignored Files #
+README_Template.txt
+
+# Ignored Directories #
+build/
+lib/
+nbproject/
+test/
+Integrador/
+
+
