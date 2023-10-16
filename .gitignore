@@ -26,6 +26,7 @@ build/
 lib/
 nbproject/
 test/
+target/
 Integrador/
 
 
