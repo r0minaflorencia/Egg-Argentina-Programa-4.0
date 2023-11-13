@@ -1,0 +1,3 @@
+com\mycompany\banco\entidades\CuentaBancaria.class
+com\mycompany\banco\servicios\CuentaBancariaServicio.class
+com\mycompany\banco\App.class

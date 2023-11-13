@@ -22,11 +22,11 @@ replay_pid*
 README_Template.txt
 
 # Ignored Directories #
-build/
-lib/
-nbproject/
-test/
-target/
-Integrador/
+#build/
+#lib/
+#nbproject/
+#test/
+#target/
+#Integrador/
 
 
