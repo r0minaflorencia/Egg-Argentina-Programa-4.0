@@ -1,8 +1,8 @@
 package app.tienda.servicios;
 
 import app.tienda.entidades.Producto;
-import java.util.Random;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ProductoServicios {
 
     private final Scanner scan;
-    private final HashMap<Integer, Producto> productos;
+    private final HashMap<String, Producto> productos;
 
     public ProductoServicios() {
         this.scan = new Scanner(System.in).useDelimiter("\n");
@@ -28,18 +28,18 @@ public class ProductoServicios {
         return new Producto(nombre, precio);
     }
 
-    public HashMap<Integer, Producto> cargarProductos() {
+    public HashMap<String, Producto> cargarProductos() {
         boolean salir = false;
         String rta;
-        Random random = new Random(); //creo un objeto random.
-        Integer codigo = Math.abs(random.nextInt()); //Math.abs me garantiza que el nro no sea negativo.
-        Producto producto = crear();
-        
+
         do {
-            productos.put(codigo,producto);
+
+            Producto p = crear();
+
+            productos.put(p.getNombre(), p);
 
             System.out.print("¿Cargar otro producto? (s/n): ");
-            rta = scan.next();
+            rta = scan.next().toLowerCase();
 
             if (rta.equalsIgnoreCase("n")) {
                 salir = true;
@@ -47,15 +47,15 @@ public class ProductoServicios {
                 salir = false;
             }
 
-            while (!rta.equalsIgnoreCase("n")
-                    && !rta.equalsIgnoreCase("s")) {
+            while (!rta.equals("n")
+                    && !rta.equals("s")) {
                 System.out.println("Debes ingresar una respuesta correcta.");
                 System.out.print("¿Cargar otro producto? (s/n): ");
-                rta = scan.next();
+                rta = scan.next().toLowerCase();
 
-                if (rta.equalsIgnoreCase("n")) {
+                if (rta.equals("n")) {
                     salir = true;
-                } else if (rta.equalsIgnoreCase("s")) {
+                } else if (rta.equals("s")) {
                     salir = false;
                 }
             }
@@ -68,9 +68,21 @@ public class ProductoServicios {
     public void mostrarProductos() {
         System.out.println();
         
-        //COMPLETAR
+        for (Map.Entry<String, Producto> p : productos.entrySet()) {
+            System.out.println(p.getKey() + " $" + p.getValue().getPrecio());
+        }
         
         System.out.println();
     }
+    
+    public void eliminarProducto() {
+        
+    }
+    
+    public void modificarPrecio() {
+        
+    }
+    
+    
 
 }

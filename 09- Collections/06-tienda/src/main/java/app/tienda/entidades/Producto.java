@@ -32,9 +32,6 @@ public class Producto {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-    
-    
-
   
     @Override
     public String toString() {
