@@ -19,6 +19,25 @@
 *.tar.gz
 *.rar
 
+# Ignored File Types #
+*.xml
+*.mf
+*.properties
+
+# Ignored Files #
+README_Template.txt
+
+# Ignored Directories #
+node_modules
+tmp/
+build/
+lib/
+nbproject/
+test/
+target/
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+
