@@ -1,0 +1,3 @@
+app\persona\entidades\Persona.class
+app\persona\servicios\PersonaServicio.class
+app\persona\App.class

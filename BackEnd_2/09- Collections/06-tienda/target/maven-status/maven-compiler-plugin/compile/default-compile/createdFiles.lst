@@ -1,0 +1,3 @@
+app\tienda\entidades\Producto.class
+app\tienda\servicios\ProductoServicios.class
+app\tienda\App.class

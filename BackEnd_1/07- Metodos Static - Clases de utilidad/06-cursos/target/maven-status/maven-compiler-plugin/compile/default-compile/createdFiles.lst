@@ -1,0 +1,3 @@
+app\cursos\App.class
+app\cursos\entidades\Curso.class
+app\cursos\servicios\CursoService.class

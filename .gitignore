@@ -1,5 +1,5 @@
 # Compiled class file #
-#*.class
+*.class
 
 # Log file #
 *.log
@@ -18,14 +18,5 @@ replay_pid*
 *.mf
 *.properties
 
-# Ignored Files #
-#README_Template.txt
-
-# Ignored Directories #
-#build/
-#lib/
-#nbproject/
-#test/
-target/
 
 

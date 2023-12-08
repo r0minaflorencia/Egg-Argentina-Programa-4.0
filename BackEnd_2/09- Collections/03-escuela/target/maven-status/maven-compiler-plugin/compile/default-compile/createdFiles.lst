@@ -1,0 +1,3 @@
+app\escuela\App.class
+app\escuela\servicios\AlumnoService.class
+app\escuela\entidades\Alumno.class
