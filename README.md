@@ -2,4 +2,4 @@
 
 Este repositorio contiene ejercicios de las guías brindadas por Egg Cooperation.
 
-(Java exercises, using NetBeans IDE).
+(Java exercises).
