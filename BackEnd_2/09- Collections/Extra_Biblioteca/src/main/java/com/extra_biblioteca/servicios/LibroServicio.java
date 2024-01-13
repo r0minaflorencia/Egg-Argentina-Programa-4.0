@@ -1,7 +1,6 @@
 package com.extra_biblioteca.servicios;
 
 import com.extra_biblioteca.entidades.Libro;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ import java.util.Scanner;
 public class LibroServicio {
 
     private final Scanner scan;
-    private HashSet<Libro> books;
+    private final HashSet<Libro> books;
 
     public LibroServicio() {
         this.scan = new Scanner(System.in).useDelimiter("\n");

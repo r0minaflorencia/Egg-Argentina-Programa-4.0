@@ -26,8 +26,7 @@ public class Extra_Biblioteca {
         //loop
         do {
             //menu
-            System.out.println(); //space
-            System.out.println("    Menu    "
+            System.out.println(" \n   Menu    "
                     + "\n a- Ingresar ítems"
                     + "\n b- Rentar"
                     + "\n c- Devolver"
@@ -47,7 +46,6 @@ public class Extra_Biblioteca {
                 default ->
                     System.out.println("Debes ingresar una respuesta válida.");
             }
-            System.out.println(); //space
         } while (!salir);
 
     }
