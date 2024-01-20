@@ -1,5 +1,7 @@
 package com.app.entities;
 
+import java.util.Objects;
+
 public class Perro {
 
     private String nombre, raza, tamanio;
@@ -54,6 +56,34 @@ public class Perro {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + Objects.hashCode(this.nombre);
+        hash = 19 * hash + Objects.hashCode(this.raza);
+        hash = 19 * hash + Objects.hashCode(this.tamanio);
+        hash = 19 * hash + Objects.hashCode(this.edad);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Perro other = (Perro) obj;
+        if (!Objects.equals(this.nombre, other.nombre) && !Objects.equals(this.raza, other.raza)) {
+            return false;
+        }
+        return Objects.equals(this.nombre, other.nombre);
     }
 
     @Override

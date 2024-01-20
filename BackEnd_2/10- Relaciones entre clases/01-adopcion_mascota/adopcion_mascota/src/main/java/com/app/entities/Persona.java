@@ -1,8 +1,9 @@
 package com.app.entities;
 
+import java.util.Objects;
 import java.util.Set;
 
-public class Persona implements Comparable {
+public class Persona {
 
     private String nombre, apellido;
     private int edad;
@@ -61,9 +62,28 @@ public class Persona implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + Objects.hashCode(this.dni);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Persona other = (Persona) obj;
+        if (!Objects.equals(this.dni, other.dni)) {
+            return false;
+        }
+        return Objects.equals(this.dni, other.dni);
     }
 
     @Override

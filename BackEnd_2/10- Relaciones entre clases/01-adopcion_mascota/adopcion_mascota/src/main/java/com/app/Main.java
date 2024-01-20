@@ -66,7 +66,11 @@ public class Main {
     }
 
     public static Set<Persona> agregarPersonas(Set<Persona> personas) {
-        personas.add(registrarPersona());
+        if (personas.add(registrarPersona())) {
+            System.out.println("Se ha registrado correctamente");
+        } else {
+            System.out.println("Ya existe una persona registrada con ese dni.");
+        }
         return personas;
     }
 
