@@ -1,0 +1,40 @@
+@startuml juego_de_cartas
+
+entity Carta {
+    - palo : PalosEnum
+    - valor : ValoresEnum
+    + getValor() : ValoresEnum
+    + getPalo() : PalosEnum
+    + toString() : String
+}
+
+entity Baraja {
+    - mazo : List<Carta>
+    - cartasAdquiridas : List<Carta>
+    - inicializarBaraja()
+    + barajar()
+    + mostrarDisponibles()
+    + siguienteCarta()
+    + adquirirCartas()
+    + mostrarCartasAdquiridas()
+    + cantidadDeCartasDisponibles()
+    + getMazo()
+    + getCartasAdquiridas()
+    + setCartasAdquiridas()
+}
+
+enum PalosEnum {
+    ESPADAS, OROS,
+    BASTOS, COPAS
+}
+
+enum ValoresEnum {
+    AS, DOS, TRES, CUATRO, CINCO,
+    SEIS, SIETE, SOTA, CABALLO, REY
+}
+
+Carta "1" <--> "1" PalosEnum
+Carta "1" <--> "1" ValoresEnum
+Baraja "1" --> "0..*" Carta
+
+@enduml

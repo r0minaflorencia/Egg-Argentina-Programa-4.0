@@ -24,7 +24,7 @@ public class Baraja {
     }
 
     // metodo privado para inicializar la baraja con todas las cartas
-    public void inicializarBaraja() {
+    private void inicializarBaraja() {
         for (PalosEnum palo : PalosEnum.values()) {
             for (ValoresEnum valor : ValoresEnum.values()) {
                 mazo.add(new Carta(valor, palo));
