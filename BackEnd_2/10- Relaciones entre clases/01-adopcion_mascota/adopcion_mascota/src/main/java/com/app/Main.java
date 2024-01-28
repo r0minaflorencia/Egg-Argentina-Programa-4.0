@@ -175,7 +175,7 @@ public class Main {
                 if (persona.getPerros().isEmpty()) {
                     System.out.println(persona.toString());
                 } else {
-                    System.out.println("[" + persona.toString() + " \n Perros: " + persona.getPerros() + "]");
+                    System.out.println(persona.toString() + " \n Perros: " + persona.getPerros());
                 }
             }
         }

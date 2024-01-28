@@ -83,7 +83,7 @@ public class Perro {
         if (!Objects.equals(this.nombre, other.nombre) && !Objects.equals(this.raza, other.raza)) {
             return false;
         }
-        return Objects.equals(this.nombre, other.nombre);
+        return Objects.equals(this.nombre, other.nombre) && Objects.equals(this.raza, other.raza);
     }
 
     @Override

@@ -1,0 +1,61 @@
+@startuml adopcion_mascota
+!theme aws-orange
+
+entity Perro {
+    - nombre: String
+    - raza: String
+    - tamanio: String
+    - edad: int
+    - duenio: Persona
+    + getNombre(): String
+    + setNombre(): void
+    + getRaza(): String
+    + setRaza(): void
+    + getTamanio(): int
+    + setTamanio(): void
+    + getDuenio(): Persona
+    + setDuenio(): void
+    + hashCode(): int
+    + equals(): boolean
+    + toString(): String
+}
+
+entity Persona {
+    - nombre: String
+    - apellido: String
+    - edad: int
+    - dni: Integer
+    - perros: HashSet<Perro>
+    + getNombre(): String
+    + setNombre(): void
+    + getApellido(): String
+    + setApellido(): void
+    + getEdad(): int
+    + setEdad(): void
+    + getDni(): Integer
+    + setDni(): void
+    + getPerros(): HashSet<Perro>
+    + setPerros(): void
+    + hashCode(): int
+    + equals(): boolean
+    + toString(): String
+}
+
+class Main {
+    + personas: HashSet<Persona>
+    + perros: HashSet<Perro>
+    + {static} agregarPersonas(HashSet<Persona> personas): HashSet<Persona>
+    + {static} registrarPersona(): Persona
+    + {static} agregarPerros(HashSet<Perro> perros): HashSet<Perro>
+    + {static} registrarPerro(): Perro
+    + {static} adoptar(): void
+    + {static} mostrarPersonas(HashSet<Persona> personas): void
+    + {static} mostrarPerros(HashSet<Perro> perros): void
+}
+
+Main "1" --> "1..*" Perro
+Main "1" --> "1..*" Persona
+Persona "1" --> "0..*" Perro
+Perro "1" --> "0..1" Persona
+
+@enduml
