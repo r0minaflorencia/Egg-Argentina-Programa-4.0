@@ -24,13 +24,23 @@ entity Baraja {
 }
 
 enum PalosEnum {
-    ESPADAS, OROS,
-    BASTOS, COPAS
+    + ESPADAS
+    + OROS
+    + BASTOS
+    + COPAS
 }
 
 enum ValoresEnum {
-    AS, DOS, TRES, CUATRO, CINCO,
-    SEIS, SIETE, SOTA, CABALLO, REY
+    + AS
+    + DOS
+    + TRES
+    + CUATRO
+    + CINCO
+    + SEIS
+    + SIETE
+    + SOTA
+    + CABALLO
+    + REY
 }
 
 Carta "1" <--> "1" PalosEnum
