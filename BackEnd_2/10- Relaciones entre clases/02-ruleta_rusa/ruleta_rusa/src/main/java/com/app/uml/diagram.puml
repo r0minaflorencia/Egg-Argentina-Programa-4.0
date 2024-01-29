@@ -1,0 +1,56 @@
+@startuml ruleta_rusa
+
+entity Player {
+    - id: Integer
+    - name: String
+    - alive: boolean
+    + getId(): Integer
+    + setId(Integer id): void
+    + getName(): String
+    + setName(String name): void
+    + getAlive(): boolean
+    + setAlive(boolean alive): void
+    + hashCode(): int
+    + equals(Obj object): boolean
+    + toString(): String
+}
+
+entity WaterGun {
+    - actualPosition: int
+    - waterPosition: int
+    + getActualPosition(): int
+    + setActualPosition(int actualPosition): void
+    - waterPosition: int
+    + getWaterPosition(): int
+    + setWaterPosition(int waterPosition): void
+    + toString(): String
+}
+
+class PlayerService {
+    - players: Set<Player>
+    - wGun: WaterGunService
+    + loadPlayers(): Set<Player>
+    + shoot(): void
+}
+
+class WaterGunService {
+    - wGun: WaterGun
+    + load(): WaterGun
+    + shoot(): boolean
+    + next(): void
+    + show(): void
+}
+
+class Main {
+    + {static} playGame(Set<Player> players,
+    {static} WaterGunService gunService): void
+}
+
+Main "1" --> "1..*" PlayerService
+Main "1" --> "1..*" WaterGunService
+PlayerService "1" --> "1..*" Player
+Player "1..*" --> "1" WaterGun
+WaterGunService "1" --> "1..*" WaterGun
+PlayerService "1" --> "1" WaterGunService
+
+@enduml
