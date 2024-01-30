@@ -1,0 +1,45 @@
+@startuml jugador
+
+entity Jugador {
+    - nombre: String
+    - apellido: String
+    - nro: Integer
+    - posicion: int
+    + getNombre(): String
+    + setNombre(): void
+    + getApellido(): String
+    + setApellido(): void
+    + getNro(): Integer
+    + setApellido(): void
+    + getPosicion(): int
+    + setPosicion(): void
+    + toString(): String
+}
+
+entity Equipo {
+    - players: Set<Jugador> 
+    + getPlayers(): Set<Jugador>
+    + setPlayers(): void    
+    + toString(): String
+}
+
+class JugadorServices {
+    - scan: Scanner 
+    + create(): Jugador
+}
+
+class EquipoServices {
+    - team: Equipo
+    - players: JugadorServices
+    - scan: Scanner
+    + load(): Equipo
+    + showAllPlayers(): void   
+}
+
+EquipoServices "1" --> "1..*" Equipo
+EquipoServices "1" --> "1" JugadorServices  
+EquipoServices "1" --> "1..*" Jugador
+Equipo "1..*" <--> "1..*" Jugador
+JugadorServices "1" --> "1..*" Jugador
+
+@enduml
