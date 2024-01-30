@@ -1,0 +1,29 @@
+@startuml persona
+
+entity Persona {
+    - nombre: String
+    - apellido: String
+    - dni: Dni
+    + getNombre(): String
+    + setNombre(): void
+    + getApellido(): String
+    + setApellido(): void
+    + getDni(): Dni
+    + setDni(): void
+    + toString(): String
+}
+
+entity Dni {
+    - serie: char
+    - nro: Integer
+    + getSerie(): char
+    + setSerie(): void
+    + getNro(): Integer
+    + setNro(): void
+    + toString(): String
+}
+
+
+Persona "1" <--> "1" Dni
+
+@enduml 
