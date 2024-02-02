@@ -1,0 +1,34 @@
+@startuml cinema
+
+entity Pelicula {
+    - titulo: String
+    - director: String
+    - duracion: double
+    - atp: boolean
+}
+
+entity Sala {
+    - pelicula: Pelicula
+    - butacas: TreeSet<Butaca>
+}
+
+entity Butaca {
+    - numero: int
+    - letra: char
+    - disponibilidad: boolean
+}
+
+entity Espectador {
+    - nombre: String
+    - edad: int
+    - dineroDisponible: double
+}
+
+Sala "1" --> "1..*" Pelicula
+Sala "1" --> "..*" Butaca
+Sala "1" --> "0..*" Espectador
+Butaca "1" --> "0..*" Espectador
+Espectador "1" --> "1" Butaca
+Pelicula "1" --> "1..*" Sala
+
+@enduml
