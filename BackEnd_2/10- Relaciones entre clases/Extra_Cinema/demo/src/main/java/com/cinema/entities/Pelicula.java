@@ -2,16 +2,26 @@ package com.cinema.entities;
 
 public class Pelicula {
     private String titulo, director;
-    private double duracion;
+    private int duracion;
+    private boolean atp;
 
     public Pelicula() {
 
     }
 
-    public Pelicula (String titulo, String director, double duracion) {
+    public Pelicula(String titulo, String director, int duracion, boolean atp) {
         this.titulo = titulo;
         this.director = director;
         this.duracion = duracion;
+        this.atp = atp;
+    }
+
+    public boolean getAtp() {
+        return atp;
+    }
+
+    public void setAtp(boolean atp) {
+        this.atp = atp;
     }
 
     public String getDirector() {
@@ -22,11 +32,11 @@ public class Pelicula {
         this.director = director;
     }
 
-    public double getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
@@ -40,6 +50,6 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return titulo + " - by: " + director + " - duración: " + duracion;
-    } 
+        return titulo + " - by: " + director + " - duración: " + duracion + " minutos.";
+    }
 }

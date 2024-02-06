@@ -1,35 +1,36 @@
 package com.cinema.entities;
 
-import java.util.Set;
+import java.util.List;
+
+import com.cinema.enums.ButacaEnum;
 
 public class Sala {
-    
-    private Set<Butaca> butacas;
-    private Pelicula pelicula;
-    
+
+    private List<ButacaEnum> butacas;
+    private List<Pelicula> peliculas;
+
     public Sala() {
-
     }
 
-    public Sala(Set<Butaca> butacas, Pelicula pelicula) {
+    public Sala(List<ButacaEnum> butacas, List<Pelicula> peliculas) {
         this.butacas = butacas;
-        this.pelicula = pelicula;
+        this.peliculas = peliculas;
     }
-
-    public Set<Butaca> getButacas() {
+    
+    public List<ButacaEnum> getButacas() {
         return butacas;
     }
 
-    public void setButacas(Set<Butaca> butacas) {
-        this.butacas = butacas;
+    public void setButacas(List<ButacaEnum> butacas) {
+        this.butacas = (List<ButacaEnum>) butacas;
     }
 
-    public Pelicula getPelicula() {
-        return pelicula;
+    public List<Pelicula> getPeliculas() {
+        return peliculas;
     }
 
-    public void setPelicula(Pelicula pelicula) {
-        this.pelicula = pelicula;
+    public void setPelicula(List<Pelicula> peliculas) {
+        this.peliculas = peliculas;
     }
 
 }

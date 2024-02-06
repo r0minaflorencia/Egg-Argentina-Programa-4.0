@@ -12,7 +12,7 @@ entity Sala {
     - butacas: TreeSet<Butaca>
 }
 
-entity Butaca {
+enum ButacaEnum {
     - numero: int
     - letra: char
     - disponibilidad: boolean
@@ -25,10 +25,10 @@ entity Espectador {
 }
 
 Sala "1" --> "1..*" Pelicula
-Sala "1" --> "..*" Butaca
+Sala "1" --> "..*" ButacaEnum
 Sala "1" --> "0..*" Espectador
-Butaca "1" --> "0..*" Espectador
-Espectador "1" --> "1" Butaca
+ButacaEnum "1" --> "0..*" Espectador
+Espectador "1" --> "1" ButacaEnum
 Pelicula "1" --> "1..*" Sala
 
 @enduml
