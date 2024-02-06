@@ -6,13 +6,8 @@ import com.cinema.entities.Pelicula;
 
 public class PeliculaService {
 
-    private Scanner scan;
-
-    public PeliculaService() {
-        this.scan = new Scanner(System.in);
-    }
-
-    public Pelicula agregarPelicula() {
+    public static Pelicula agregarPelicula() {
+        Scanner scan = new Scanner(System.in);
         System.out.println("Agregar pelicula");
         System.out.print("Título: ");
         String titulo = scan.nextLine();
