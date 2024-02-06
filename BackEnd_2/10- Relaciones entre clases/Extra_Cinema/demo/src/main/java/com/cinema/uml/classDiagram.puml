@@ -8,14 +8,14 @@ entity Pelicula {
 }
 
 entity Sala {
-    - pelicula: Pelicula
-    - butacas: TreeSet<Butaca>
+    - pelicula: List<Pelicula>
+    - butacas: List<ButacaEnum>
 }
 
 enum ButacaEnum {
-    - numero: int
-    - letra: char
     - disponibilidad: boolean
+    + getDisponibilidad(): boolean
+    + setDisponibilidad(): void
 }
 
 entity Espectador {

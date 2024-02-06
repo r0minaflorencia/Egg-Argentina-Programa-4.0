@@ -18,4 +18,8 @@ public enum ButacaEnum {
         return disponibilidad;
     }
 
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
+
 }
