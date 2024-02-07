@@ -1,6 +1,7 @@
 package com.cinema.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,13 +52,32 @@ public class SalaService {
         espectadores.add(new Espectador("Clara", 29, 550));
         espectadores.add(new Espectador("Celeste", 25, 100));
         espectadores.add(new Espectador("David", 30, 430));
+        espectadores.add(new Espectador("Ana", 16, 83));
 
         return espectadores;
     }
 
     public void simulacion() {
         double precioEntrada = 150;
-        System.out.println("En proceso...");
+
+        for (Espectador user : espectadores) {
+            if (user.getDineroDisponible() >= precioEntrada) {
+                Collections.shuffle(butacas);
+
+                for (ButacaEnum butaca : butacas) {
+                    if (butaca.getDisponibilidad() == true) {
+                        butaca.setDisponibilidad(false);
+                        System.out.println(user.toString() + " ha ocupado la butaca: " + butaca.name());
+
+                    }
+                    break;
+                }
+
+            } else {
+                System.out.println(user.getNombre() + " no cuenta con dinero suficiente.");
+            }
+        }
+
     }
 
     public void agregarPelicula() {
@@ -97,6 +117,7 @@ public class SalaService {
     }
 
     public void mostrarButacas() {
+        Collections.sort(butacas);
         if (butacas.isEmpty()) {
             System.out.println("Debes inicializar la sala primero.");
         } else {
