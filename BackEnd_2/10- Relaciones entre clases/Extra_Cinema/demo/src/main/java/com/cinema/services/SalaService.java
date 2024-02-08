@@ -38,9 +38,9 @@ public class SalaService {
     }
 
     public List<Pelicula> cargarPeliculasPorDefecto() {
-        peliculas.add(new Pelicula("Narnia: El León, la Bruja y el Ropero", "Andrew Adamson", 140, true));
-        peliculas.add(new Pelicula("Narnia: El príncipe Caspian", "Andrew Adamson", 144, true));
-        peliculas.add(new Pelicula("Narnia: La travesía del Viajero del Alba", "Michael Apted", 115, true));
+        peliculas.add(new Pelicula("Narnia: el leon, la bruja y el ropero", "Andrew Adamson", 140, true));
+        peliculas.add(new Pelicula("Narnia: el principe Caspian", "Andrew Adamson", 144, true));
+        peliculas.add(new Pelicula("Narnia: la travesia del viajero del alba", "Michael Apted", 115, true));
 
         return peliculas;
     }
@@ -59,23 +59,69 @@ public class SalaService {
 
     public void simulacion() {
         double precioEntrada = 150;
+        Pelicula selectedMovie = null;
 
-        for (Espectador user : espectadores) {
-            if (user.getDineroDisponible() >= precioEntrada) {
-                Collections.shuffle(butacas);
+        Scanner scan = new Scanner(System.in);
 
-                for (ButacaEnum butaca : butacas) {
-                    if (butaca.getDisponibilidad() == true) {
-                        butaca.setDisponibilidad(false);
-                        System.out.println(user.toString() + " ha ocupado la butaca: " + butaca.name());
+        System.out.print("Ingresa el título de la película que deseas ver: ");
+        String buscarPelicula = scan.next().toLowerCase();
 
-                    }
-                    break;
-                }
-
-            } else {
-                System.out.println(user.getNombre() + " no cuenta con dinero suficiente.");
+        for (Pelicula movie : peliculas) {
+            if (movie.getTitulo().toLowerCase().equals(buscarPelicula)) {
+                selectedMovie = movie;
+                break;
             }
+        }
+
+        if (selectedMovie != null) {
+
+            for (Espectador user : espectadores) {
+
+                if (selectedMovie.getAtp() == false && user.getEdad() < 18) {
+                    System.out.println(user.getNombre() + ": la película es apta para mayores de edad.");
+                } else if ((selectedMovie.getAtp() == false && user.getEdad() >= 18)
+                        || selectedMovie.getAtp() == true) {
+                    if (user.getDineroDisponible() >= precioEntrada) {
+                        Collections.shuffle(butacas);
+
+                        for (ButacaEnum butaca : butacas) {
+                            if (butaca.getDisponibilidad() == true) {
+                                butaca.setDisponibilidad(false);
+                                System.out.println(user.toString() + " ha ocupado la butaca: " + butaca.name());
+
+                            }
+                            break;
+                        }
+
+                    } else {
+                        System.out.println(user.getNombre() + " no cuenta con dinero suficiente.");
+                    }
+                }
+            }
+
+        } else {
+            System.out.println("No has seleccionado una película.");
+        }
+
+    }
+
+    public void actualizarCartelera() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n Selecciona una opción" +
+                "\n a- Agregar película" +
+                "\n b- Eliminar película");
+        String option = scan.next().toLowerCase();
+
+        switch (option) {
+            case "a":
+            agregarPelicula();
+                break;
+            case "b":
+                eliminarPelicula();
+                break;
+            default:
+            System.out.println("Debes ingresar una respuesta válida.");
+                break;
         }
 
     }
@@ -93,6 +139,35 @@ public class SalaService {
             switch (respuesta) {
                 case "s":
                     peliculas.add(PeliculaService.agregarPelicula());
+                    break;
+                case "n":
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Debes ingresar una respuesta válida.");
+                    break;
+            }
+
+        } while (!exit);
+    }
+
+    public void eliminarPelicula() {
+        System.out.println("método en construcción...");
+    }
+
+    public void cargarNuevoUsuario() {
+        Scanner scan = new Scanner(System.in);
+        boolean exit = false;
+        String respuesta;
+
+        espectadores.add(EspectadorService.cargarUsuario());
+
+        do {
+            System.out.print("¿Agregar otro usuario? (s/n): ");
+            respuesta = scan.next().toLowerCase();
+            switch (respuesta) {
+                case "s":
+                    espectadores.add(EspectadorService.cargarUsuario());
                     break;
                 case "n":
                     exit = true;

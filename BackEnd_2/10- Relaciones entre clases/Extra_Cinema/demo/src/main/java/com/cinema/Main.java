@@ -37,10 +37,10 @@ public class Main {
                     salaService.mostrarButacas();
                     break;
                 case "e":
-                    // salaService.actualizarCartelera();
+                    salaService.actualizarCartelera();
                     break;
                 case "f":
-                    // salaService.cargarNuevoUsuario();
+                    salaService.cargarNuevoUsuario();
                     break;
                 case "g":
                     System.out.println("Exit.");
