@@ -2,6 +2,7 @@ package com.cinema.services;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -114,13 +115,13 @@ public class SalaService {
 
         switch (option) {
             case "a":
-            agregarPelicula();
+                agregarPelicula();
                 break;
             case "b":
                 eliminarPelicula();
                 break;
             default:
-            System.out.println("Debes ingresar una respuesta válida.");
+                System.out.println("Debes ingresar una respuesta válida.");
                 break;
         }
 
@@ -152,7 +153,19 @@ public class SalaService {
     }
 
     public void eliminarPelicula() {
-        System.out.println("método en construcción...");
+        Iterator<Pelicula> it = peliculas.iterator();
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Nombre de la pelicula a eliminar: ");
+        String eliminar = scan.nextLine().toLowerCase();
+
+        while (it.hasNext()) {
+            Pelicula pelicula = it.next();
+            if (pelicula.getTitulo().toLowerCase().equals(eliminar)) {
+                it.remove();
+                System.out.println("Se ha eliminado correctamente la película: " + pelicula.getTitulo());
+                break;
+            }
+        }
     }
 
     public void cargarNuevoUsuario() {
