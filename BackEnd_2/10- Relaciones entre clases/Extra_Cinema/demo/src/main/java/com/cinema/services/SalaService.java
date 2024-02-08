@@ -39,7 +39,7 @@ public class SalaService {
 
     public List<Pelicula> cargarPeliculasPorDefecto() {
         peliculas.add(new Pelicula("Narnia: el leon, la bruja y el ropero", "Andrew Adamson", 140, true));
-        peliculas.add(new Pelicula("Narnia: el principe Caspian", "Andrew Adamson", 144, true));
+        peliculas.add(new Pelicula("Narnia: el principe Caspian", "Andrew Adamson", 144, false));
         peliculas.add(new Pelicula("Narnia: la travesia del viajero del alba", "Michael Apted", 115, true));
 
         return peliculas;
@@ -64,10 +64,10 @@ public class SalaService {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Ingresa el título de la película que deseas ver: ");
-        String buscarPelicula = scan.next().toLowerCase();
+        String buscarPelicula = scan.nextLine();
 
         for (Pelicula movie : peliculas) {
-            if (movie.getTitulo().toLowerCase().equals(buscarPelicula)) {
+            if (movie.getTitulo().equalsIgnoreCase(buscarPelicula)) {
                 selectedMovie = movie;
                 break;
             }
