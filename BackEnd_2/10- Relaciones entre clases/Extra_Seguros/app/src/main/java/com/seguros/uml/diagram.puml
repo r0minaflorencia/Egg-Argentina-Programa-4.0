@@ -1,0 +1,39 @@
+@startuml La tercera seguros
+
+entity Cliente {
+    - nombre: String
+    - apellido: String
+    - documento: Integer
+    - mail: String
+    - domicilio: String
+    - tel: int
+}
+
+entity Vehiculo {
+    - marca: Marca
+    - modelo: String
+    - anio: int
+    - nroMotor: int
+    - chasis: String
+    - color: String
+    - tipo: String
+}
+
+entity Poliza {
+    - vehiculo: Vehiculo
+    - cliente: Cliente
+    - tipoDeCobertura: TipoDeCobertura
+    - nroPoliza: int
+    - inicio: Date
+    - fin: Date
+    - cantidadCuotas: int
+    - formaDePago: FormaDePago
+    - montoTotalAsegurado: double
+    - montoMaximoGranizo: double
+    - incluyeGranizo: boolean
+}
+
+Cliente "1" --> "1..*" Vehiculo
+Cliente "1" <--> "1" Poliza
+
+@enduml
