@@ -14,17 +14,18 @@ entity Cliente {
     - documento: Integer
     - mail: String
     - domicilio: String
-    - tel: int
+    - tel: String
+    - vehiculos: List<Vehiculo>
 }
 
 entity Vehiculo {
     - owner: Cliente
     - marca: Marca
+    - color: Color
     - modelo: String
     - anio: int
     - nroMotor: int
     - chasis: String
-    - color: String
     - tipo: String
 }
 
