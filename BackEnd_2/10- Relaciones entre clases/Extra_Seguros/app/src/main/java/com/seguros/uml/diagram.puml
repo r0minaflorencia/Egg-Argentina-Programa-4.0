@@ -1,5 +1,13 @@
 @startuml La tercera seguros
 
+entity Company {
+    - nombre: String
+    - polizas: List<Poliza>
+    + agregarPoliza(poliza: Poliza)
+    + eliminarPoliza(poliza: Poliza)
+    + getAllPolizas(): List<Poliza>
+}
+
 entity Cliente {
     - nombre: String
     - apellido: String
@@ -10,6 +18,7 @@ entity Cliente {
 }
 
 entity Vehiculo {
+    - owner: Cliente
     - marca: Marca
     - modelo: String
     - anio: int
@@ -23,7 +32,7 @@ entity Poliza {
     - vehiculo: Vehiculo
     - cliente: Cliente
     - tipoDeCobertura: TipoDeCobertura
-    - nroPoliza: int
+    - nroPoliza: String
     - inicio: Date
     - fin: Date
     - cantidadCuotas: int
@@ -31,9 +40,24 @@ entity Poliza {
     - montoTotalAsegurado: double
     - montoMaximoGranizo: double
     - incluyeGranizo: boolean
+    + renovarPoliza()
+    + cancelarPoliza()
 }
 
+entity Cuota {
+    - poliza: Poliza
+    - nroCuota: int
+    - montoTotal: double
+    - fechaVencimiento: Date
+    - cuotaCancelada: boolean
+    - formaDePago: FormaDePago
+}
+
+Company "1" --> "0..*" Cliente
+Company "1" --> "0..*" Poliza
+Vehiculo "1" --> "1" Cliente
+Poliza "1" --> "1" Vehiculo
 Cliente "1" --> "1..*" Vehiculo
-Cliente "1" <--> "1" Poliza
+Poliza "1" --> "0..*" Cuota
 
 @enduml
