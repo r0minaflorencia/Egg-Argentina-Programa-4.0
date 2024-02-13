@@ -8,15 +8,17 @@ public class Vehiculo {
     private Cliente owner;
     private Color color;
     private Marca marca;
-    private String modelo, chasis, tipo;
-    private int anio, nroMotor;
+    private String modelo, chasis, tipo, dominio;
+    private int anio;
+    private double motor;
+
 
     public Vehiculo() {
 
     }
 
     public Vehiculo(Cliente owner, Color color, Marca marca, String modelo, String chasis, String tipo, int anio,
-            int nroMotor) {
+           double motor, String dominio) {
         this.owner = owner;
         this.color = color;
         this.marca = marca;
@@ -24,7 +26,16 @@ public class Vehiculo {
         this.chasis = chasis;
         this.tipo = tipo;
         this.anio = anio;
-        this.nroMotor = nroMotor;
+        this.motor = motor;
+        this.dominio = dominio;
+    }
+
+    public String getDominio() {
+        return dominio;
+    }
+
+    public void setDominio(String dominio) {
+        this.dominio = dominio;
     }
 
     public int getAnio() {
@@ -51,12 +62,12 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getNroMotor() {
-        return nroMotor;
+    public double getMotor() {
+        return motor;
     }
 
-    public void setNroMotor(int nroMotor) {
-        this.nroMotor = nroMotor;
+    public void setMotor(double motor) {
+        this.motor = motor;
     }
 
     public String getTipo() {
@@ -94,7 +105,7 @@ public class Vehiculo {
     @Override
     public String toString() {
         return marca + " " + modelo + " " + anio + " " + color + ", tipo: " + tipo + ", chasis: " +
-                chasis + ", nro motor: " + nroMotor + " - propietario: " + owner;
+                chasis + ", nro motor: " + motor + " - propietario: " + owner + " - dominio: " + dominio;
     }
 
 }

@@ -24,9 +24,10 @@ entity Vehiculo {
     - color: Color
     - modelo: String
     - anio: int
-    - nroMotor: int
+    - motor: double
     - chasis: String
     - tipo: String
+    - dominio: String
 }
 
 entity Poliza {
@@ -36,7 +37,6 @@ entity Poliza {
     - nroPoliza: String
     - inicio: Date
     - fin: Date
-    - cantidadCuotas: int
     - formaDePago: FormaDePago
     - montoTotalAsegurado: double
     - montoMaximoGranizo: double
