@@ -1,0 +1,20 @@
+@startuml Sistema de votacion
+
+entity Alumno {
+    - nombre: String
+    - apellido: String
+    - dni: Integer
+    - cantidadDeVotos: int
+}
+
+class Simulador {
+    - listaDeAlumnos: Set<Alumno>
+    + generarAlumnos(): Set<Alumno>
+}
+
+class Voto {
+    - alumno: Alumno
+    - alumnos: Set<Alumno>
+}
+
+@enduml
