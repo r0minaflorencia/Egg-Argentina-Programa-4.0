@@ -6,13 +6,13 @@ public class Alumno {
 
     private String nombre, apellido;
     private Integer dni;
-    private int votos;
+    private Voto votos;
 
     public Alumno() {
 
     }
 
-    public Alumno(String nombre, String apellido, Integer dni, int votos) {
+    public Alumno(String nombre, String apellido, Integer dni, Voto votos) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -43,11 +43,11 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public int getVotos() {
+    public Voto getVotos() {
         return votos;
     }
 
-    public void setVotos(int votos) {
+    public void setVotos(Voto votos) {
         this.votos = votos;
     }
 
