@@ -6,17 +6,21 @@ public class Alumno {
 
     private String nombre, apellido;
     private Integer dni;
-    private Voto votos;
+    private int cantidadVotos;
 
     public Alumno() {
 
     }
 
-    public Alumno(String nombre, String apellido, Integer dni, Voto votos) {
+    public Alumno(String nombre, String apellido, Integer dni, int cantidadVotos) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.votos = votos;
+        this.cantidadVotos = cantidadVotos;
+    }
+
+    public void incrementarVotos() {
+        this.cantidadVotos++;
     }
 
     public String getApellido() {
@@ -43,12 +47,12 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public Voto getVotos() {
-        return votos;
+    public int getCantidadVotos() {
+        return cantidadVotos;
     }
 
-    public void setVotos(Voto votos) {
-        this.votos = votos;
+    public void setVotos(int cantidadVotos) {
+        this.cantidadVotos = cantidadVotos;
     }
 
     @Override
@@ -68,7 +72,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return apellido + " " + nombre + ", dni n° " + dni + ", votos: " + votos;
+        return apellido + " " + nombre + ", dni n° " + dni + ", votos: " + cantidadVotos;
     }
 
 }

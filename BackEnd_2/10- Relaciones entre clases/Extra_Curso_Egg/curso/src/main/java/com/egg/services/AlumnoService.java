@@ -28,13 +28,6 @@ public class AlumnoService {
         String apellido = apellidos.get(random.nextInt(apellidos.size())).toString();
         Integer dni = random.nextInt(100000000); //numero de 8 dígitos
 
-        return new Alumno(nombre, apellido, dni, null);
+        return new Alumno(nombre, apellido, dni, 0);
     }
-
-    public Alumno buscarPorIndice() {
-
-
-        return null;
-    }
-
 }

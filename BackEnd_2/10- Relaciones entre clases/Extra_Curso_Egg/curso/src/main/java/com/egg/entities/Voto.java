@@ -1,13 +1,16 @@
 package com.egg.entities;
 
-import java.util.Set;
+import java.util.List;
 
 public class Voto {
 
     private Alumno alumno;
-    private Set<Alumno> alumnosVotados;
+    private List<Alumno> alumnosVotados;
 
-    public Voto(Alumno alumno, Set<Alumno> alumnosVotados) {
+    public Voto() {
+    }
+
+    public Voto(Alumno alumno, List<Alumno> alumnosVotados) {
         this.alumno = alumno;
         this.alumnosVotados = alumnosVotados;
     }
@@ -20,17 +23,17 @@ public class Voto {
         this.alumno = alumno;
     }
 
-    public Set<Alumno> getAlumnosVotados() {
+    public List<Alumno> getAlumnosVotados() {
         return alumnosVotados;
     }
 
-    public void setAlumnosVotados(Set<Alumno> alumnosVotados) {
+    public void setAlumnosVotados(List<Alumno> alumnosVotados) {
         this.alumnosVotados = alumnosVotados;
     }
 
     @Override
     public String toString() {
-        return alumno + " ha votado a: " + alumnosVotados + "]";
+        return "Voto [alumno:" + alumno + ", alumnos votados: " + alumnosVotados + "]";
     }
 
 }

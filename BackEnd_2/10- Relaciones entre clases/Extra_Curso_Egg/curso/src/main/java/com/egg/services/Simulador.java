@@ -2,20 +2,22 @@ package com.egg.services;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
 import com.egg.entities.Alumno;
 import com.egg.entities.Voto;
 
-public class Simulacion {
-
+public class Simulador {
     private Set<Alumno> listaDeAlumnos;
     private Random random;
+    private List<Voto> padron;
 
-    public Simulacion() {
+    public Simulador() {
         this.listaDeAlumnos = new HashSet<>();
         this.random = new Random();
+        this.padron = new ArrayList<>();
     }
 
     public Set<Alumno> generarListaDeAlumnos(int cantidad) {
@@ -34,8 +36,7 @@ public class Simulacion {
         }
     }
 
-    public ArrayList<Voto> votacion(Set<Alumno> listaDeAlumnos) {
-        ArrayList<Voto> padron = new ArrayList<>();
+    public List<Voto> votacion(Set<Alumno> listaDeAlumnos) {
 
         for (Alumno alumno : listaDeAlumnos) {
             HashSet<Alumno> votados = new HashSet<>();
@@ -44,15 +45,25 @@ public class Simulacion {
             while (votados.size() < 4) { // Cambiado a < 4 para incluir al propio alumno
                 ArrayList<Alumno> lista = new ArrayList<>(listaDeAlumnos);
                 Alumno alumnoElegido = lista.get(random.nextInt(lista.size()));
-                if (!votados.contains(alumnoElegido)) {
+                if (!votados.contains(alumnoElegido) && alumno != alumnoElegido) {
                     votados.add(alumnoElegido);
                     alumnoElegido.incrementarVotos(); // Incrementa el contador de votos del alumno elegido
                 }
+                ArrayList<Alumno> arrayVotados = new ArrayList<>(votados);
+                Voto aux = new Voto(alumnoElegido, arrayVotados);
+                padron.add(aux);
             }
 
-           // padron.add(votoService.generarVoto());
         }
 
         return padron;
     }
+
+    public void mostrarAlumnosVotados() {
+        for (Voto voto : padron) {
+            System.out.println("\n" + voto.getAlumno().getNombre() + " " + voto.getAlumno().getApellido()
+                    + ", DNI: " + voto.getAlumno().getDni() + " votó a: " + voto.getAlumnosVotados().toString());
+        }
+    }
+
 }
