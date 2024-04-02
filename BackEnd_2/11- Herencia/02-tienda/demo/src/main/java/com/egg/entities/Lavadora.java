@@ -24,7 +24,7 @@ public class Lavadora extends Electrodomestico {
 
         this.precioFinal();
 
-        return new Lavadora(e.getTipo(), e.getPrecio(), e.getPeso(), getColor(), carga);
+        return new Lavadora(e.tipo, e.precio, e.peso, e.color, carga);
     }
 
     public void precioFinal() {

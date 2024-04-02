@@ -33,7 +33,7 @@ public class TV extends Electrodomestico {
 
         this.precioFinal();
 
-        return new TV(e.getTipo(), e.getPrecio(), e.getPeso(), e.getColor(), pulgadas, sintonizaTDT);
+        return new TV(e.tipo, e.precio, e.peso, e.color, pulgadas, sintonizaTDT);
     }
 
     public void precioFinal() {

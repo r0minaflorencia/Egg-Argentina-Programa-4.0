@@ -1,11 +1,11 @@
 package com.egg;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 import com.egg.entities.Electrodomestico;
 import com.egg.entities.Lavadora;
 import com.egg.entities.TV;
+import com.egg.services.Compra;
 
 public class Main {
   public static void main(String[] args) {
@@ -19,14 +19,14 @@ public class Main {
     System.out.println("TV");
     ((TV) tv).crearTV();
 
-    Set<Electrodomestico> electrodomesticos = new HashSet<>();
+    ArrayList<Electrodomestico> carrito = new ArrayList<>();
 
-    electrodomesticos.add(tv);
-    electrodomesticos.add(lavadora);
+    carrito.add(tv);
+    carrito.add(lavadora);
+ 
+    Compra compra = new Compra();
 
-    for (Electrodomestico e : electrodomesticos) {
-      System.out.println(e.toString() + ". Precio final $" + e.getPrecioFinal());
-    }
+    compra.comprar(carrito);
 
   }
 }

@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Electrodomestico {
 
-    private char tipo;
-    public double precio, precioFinal, peso;
-    private String color;
-    private Scanner scan;
-    public int carga;
+    protected char tipo;
+    protected double precio, precioFinal, peso;
+    protected String color;
+    protected Scanner scan;
+    protected int carga;
 
     public Electrodomestico() {
 
