@@ -6,7 +6,7 @@ import com.example.entities.Velero;
 import com.example.services.Alquiler;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         System.out.println("Hello Puerto!");
 
@@ -14,7 +14,7 @@ public class Main {
         Nave velero = new Velero(12, 4567, 1994, 3);
         Alquiler alquiler = new Alquiler();
 
-        System.out.println("El costo del alquiler es de: " + alquiler.alquilar(cliente, velero));
+        System.out.println("El costo del alquiler es de $" + alquiler.pedido(cliente, velero));
 
     }
 }

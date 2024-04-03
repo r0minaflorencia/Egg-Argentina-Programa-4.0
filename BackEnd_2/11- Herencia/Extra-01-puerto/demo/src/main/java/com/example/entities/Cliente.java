@@ -1,12 +1,12 @@
 package com.example.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Cliente {
 
     private String nombre, apellido;
     private int dni, posicionAmarre;
-    private Date fechaAlquiler, fechaDevolucion;
+    private LocalDate fechaAlquiler, fechaDevolucion;
     private Nave barco;
 
     public Cliente() {
@@ -18,8 +18,8 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public Cliente(String nombre, String apellido, int dni, int posicionAmarre, Date fechaAlquiler,
-            Date fechaDevolucion, Nave barco) {
+    public Cliente(String nombre, String apellido, int dni, int posicionAmarre, LocalDate fechaAlquiler,
+    LocalDate fechaDevolucion, Nave barco) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -61,19 +61,19 @@ public class Cliente {
         this.posicionAmarre = posicionAmarre;
     }
 
-    public Date getFechaAlquiler() {
+    public LocalDate getFechaAlquiler() {
         return fechaAlquiler;
     }
 
-    public void setFechaAlquiler(Date fechaAlquiler) {
+    public void setFechaAlquiler(LocalDate fechaAlquiler) {
         this.fechaAlquiler = fechaAlquiler;
     }
 
-    public Date getFechaDevolucion() {
+    public LocalDate getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
+    public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 

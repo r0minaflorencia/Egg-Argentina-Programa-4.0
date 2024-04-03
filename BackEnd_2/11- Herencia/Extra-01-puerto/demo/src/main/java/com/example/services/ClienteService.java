@@ -21,6 +21,6 @@ public class ClienteService {
         System.out.print("DNI: ");
         int dni = scan.nextInt();
 
-        return new Cliente(nombre, apellido, dni);
+        return new Cliente(nombre, apellido, dni, 0, null, null, null);
     }
 }
