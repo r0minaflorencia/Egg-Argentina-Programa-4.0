@@ -8,7 +8,7 @@ public class ClienteService {
     
     private Scanner scan;
 
-    public ClienteService(Scanner scan) {
+    public ClienteService() {
         this.scan = new Scanner(System.in);
     }
 
