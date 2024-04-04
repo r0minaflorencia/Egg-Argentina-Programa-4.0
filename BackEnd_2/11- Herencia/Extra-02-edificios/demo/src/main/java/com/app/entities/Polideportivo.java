@@ -13,18 +13,19 @@ public class Polideportivo extends Edificio {
         this.techado = techado;
     }
 
+    public Polideportivo crear() {
+        // TODO here
+        return null;
+    }
+
     @Override
     public void calcularSuperficie() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException(
-                "Unimplemented method 'calcularSuperficie'");
+        System.out.println("La superficie del polideportivo es de " + (largo * ancho));
     }
 
     @Override
     public void calcularVolumen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException(
-                "Unimplemented method 'calcularVolumen'");
+        System.out.println("El volumen del polideportivo es de " + (largo * ancho * altura));
     }
 
     public boolean isTechado() {

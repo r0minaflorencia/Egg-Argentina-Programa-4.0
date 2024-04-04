@@ -8,33 +8,32 @@ public class EdificioDeOficinas extends Edificio {
 
     }
 
-    public EdificioDeOficinas(double ancho, double largo, double alto, int cantidadOficinas, int personasPorOficina,
+    public EdificioDeOficinas(double ancho, double largo, double altura, int cantidadOficinas, int personasPorOficina,
             int cantidadPisos) {
-        super(ancho, largo, alto);
+        super(ancho, largo, altura);
         this.cantidadOficinas = cantidadOficinas;
         this.personasPorOficina = personasPorOficina;
         this.cantidadPisos = cantidadPisos;
     }
 
     public void cantPersonas() {
-        /*
-         * Crear el método cantPersonas(), que muestre
-         * cuantas personas entrarían en un piso y cuantas en todo el edificio.
-         */
+        System.out.println("Cantidad de personas por piso: " + getPersonasPorOficina());
+        System.out.println("Cantidad de personas en todo el edificio: " + (getPersonasPorOficina() * getCantidadPisos()));
+    }
+
+    public EdificioDeOficinas crear() {
+        // TODO here
+        return null;
     }
 
     @Override
     public void calcularSuperficie() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException(
-                "Unimplemented method 'calcularSuperficie'");
+        System.out.println("La superficie del edificio de oficinas es de " + (largo * ancho));
     }
 
     @Override
     public void calcularVolumen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException(
-                "Unimplemented method 'calcularVolumen'");
+        System.out.println("El volumen del edificio es de " + (largo * ancho * altura));
     }
 
     public int getCantidadOficinas() {
@@ -63,9 +62,9 @@ public class EdificioDeOficinas extends Edificio {
 
     @Override
     public String toString() {
-        return super.toString() + ", cantidad de oficinas: " + cantidadOficinas + ", personas por oficina: " + personasPorOficina
+        return super.toString() + ", cantidad de oficinas: " + cantidadOficinas + ", personas por oficina: "
+                + personasPorOficina
                 + ", cantidad de pisos: " + cantidadPisos + "]";
     }
 
-    
 }

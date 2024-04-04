@@ -2,15 +2,15 @@ package com.app.entities;
 
 public abstract class Edificio {
 
-    protected double ancho, largo, alto;
+    protected double ancho, largo, altura;
 
     public Edificio() {
     }
 
-    public Edificio(double ancho, double largo, double alto) {
+    public Edificio(double ancho, double largo, double altura) {
         this.ancho = ancho;
         this.largo = largo;
-        this.alto = alto;
+        this.altura = altura;
     }
 
     public abstract void calcularSuperficie();
@@ -32,17 +32,17 @@ public abstract class Edificio {
         this.largo = largo;
     }
 
-    public double getAlto() {
-        return alto;
+    public double getAltura() {
+        return altura;
     }
 
-    public void setAlto(double alto) {
-        this.alto = alto;
+    public void setAltura(double altura) {
+        this.altura = altura;
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + " [ancho: " + ancho + ", largo: " + largo + ", alto: " + alto;
+        return getClass().getSimpleName() + " [ancho: " + ancho + ", largo: " + largo + ", alto: " + altura;
     }
 
     
