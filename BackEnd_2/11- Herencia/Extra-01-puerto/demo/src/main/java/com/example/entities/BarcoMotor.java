@@ -20,4 +20,9 @@ public class BarcoMotor extends Nave {
         this.potenciaCV = potenciaCV;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", potencia: " + potenciaCV + " CV]";
+    }
+
 }

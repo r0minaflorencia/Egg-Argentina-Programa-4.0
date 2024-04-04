@@ -39,7 +39,7 @@ public class Nave {
 
     @Override
     public String toString() {
-        return "Nave [eslora: " + eslora + ", matricula: " + matricula + ", fabricada en: " + anioFabricacion + "]";
+        return getClass().getSimpleName() + " [eslora: " + eslora + ", matricula: " + matricula + ", fabricada en: " + anioFabricacion;
     }
 
     

@@ -20,6 +20,11 @@ public class Velero extends Nave {
         this.nroMastiles = nroMastiles;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", nroMastiles: " + nroMastiles + "]";
+    }
+
     
 
 }
