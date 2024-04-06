@@ -8,6 +8,16 @@ public final class CincoEstrellas extends CuatroEstrellas {
 
     }
 
+    public CincoEstrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones,
+            int cantidadCamas, int cantidadPisos, double precio, String gimnasio, String restaurante,
+            int capacidadRestaurante, int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimusinas) {
+        super(nombre, direccion, localidad, gerente, cantidadHabitaciones, cantidadCamas, cantidadPisos, precio,
+                gimnasio, restaurante, capacidadRestaurante);
+        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
+        this.cantidadSuites = cantidadSuites;
+        this.cantidadLimusinas = cantidadLimusinas;
+    }
+
     public int getCantidadSalonesConferencia() {
         return cantidadSalonesConferencia;
     }

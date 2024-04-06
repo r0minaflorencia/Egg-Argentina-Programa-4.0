@@ -13,12 +13,22 @@ public class ResidenciaService {
     }
 
     public Residencia crear() {
+        String nombre = "Del Sol";
+        String direccion = "Calle Solar 789";
+        String localidad = "Ramos Mejía";
+        String gerente = "Gerente2";
+        boolean esPrivado = true;
+        double metrosCuadrados = 26.6;
+        int cantidadHabitaciones = 20;
 
-        return null;
+        Residencia delSol = new Residencia(nombre, direccion, localidad, gerente, esPrivado,
+                metrosCuadrados, cantidadHabitaciones, esPrivado, esPrivado);
+
+        return delSol;
     }
 
     public ArrayList<Residencia> guardar() {
-       // residencias.add();
+        // residencias.add();
 
         return residencias;
     }

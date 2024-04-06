@@ -1,8 +1,16 @@
 package com.app.services;
 
+import java.util.ArrayList;
+
 import com.app.entities.Camping;
 
 public class CampingService {
+
+    private ArrayList<Camping> campings;
+
+    public CampingService() {
+        this.campings = new ArrayList<>();
+    }
 
     public Camping crear() {
 
@@ -20,6 +28,11 @@ public class CampingService {
                 capacidadCarpas, cantidadBanios, tieneRestaurante);
 
         return laArbolada;
+    }
+
+    public ArrayList<Camping> guardar() {
+        // campings.add(null);
+        return campings;
     }
 
 }
