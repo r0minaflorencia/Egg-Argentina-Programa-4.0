@@ -8,8 +8,6 @@ public final class CincoEstrellas extends CuatroEstrellas {
 
     }
 
-
-
     public int getCantidadSalonesConferencia() {
         return cantidadSalonesConferencia;
     }

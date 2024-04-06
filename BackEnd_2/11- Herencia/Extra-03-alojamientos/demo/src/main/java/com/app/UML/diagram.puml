@@ -8,16 +8,16 @@ class Alojamiento {
 }
 
 class Hotel extends Alojamiento {
-    - int: cantidadHabitaciones
-    - int: cantidadCamas
-    - int: cantidadPisos
-    - double: precio
+    # int: cantidadHabitaciones
+    # int: cantidadCamas
+    # int: cantidadPisos
+    # double: precio
 }
 
 class 4Estrellas extends Hotel {
-    - String: gimnasio
-    - String: restaurante
-    - int: capacidadRestaurante
+    # String: gimnasio
+    # String: restaurante
+    # int: capacidadRestaurante
 }
 
 class 5Estrellas extends 4Estrellas {
@@ -27,20 +27,20 @@ class 5Estrellas extends 4Estrellas {
 }
 
 class ExtraHotel extends Alojamiento {
-    - boolean: esPrivado
-    - double: metrosCuadrados
+    # boolean: esPrivado
+    # double: metrosCuadrados
 }
 
 class Camping extends ExtraHotel {
-    - int: capacidadCarpas
-    - int: cantidadBanios
-    - boolean: tieneRestaurante
+    # int: capacidadCarpas
+    # int: cantidadBanios
+    # boolean: tieneRestaurante
 }
 
 class Residencia extends ExtraHotel {
-    - int: cantidadHabitaciones
-    - boolean: tieneDescuento
-    - boolean: tieneCampoDeportivo
+    # int: cantidadHabitaciones
+    # boolean: tieneDescuento
+    # boolean: tieneCampoDeportivo
 }
 
 @enduml
