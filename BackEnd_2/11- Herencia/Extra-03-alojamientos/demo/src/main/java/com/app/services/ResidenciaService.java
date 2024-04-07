@@ -14,9 +14,9 @@ public class ResidenciaService {
 
     public Residencia crear() {
         String nombre = "Del Sol";
-        String direccion = "Calle Solar 789";
+        String direccion = "Solar 789";
         String localidad = "Ramos Mejía";
-        String gerente = "Gerente2";
+        String gerente = "Martina Ramirez";
         boolean esPrivado = true;
         double metrosCuadrados = 26.6;
         int cantidadHabitaciones = 20;
@@ -27,8 +27,11 @@ public class ResidenciaService {
         return delSol;
     }
 
-    public ArrayList<Residencia> guardar() {
-        // residencias.add();
+    public ArrayList<Residencia> lista() {
+        residencias.add(crear());
+
+        residencias.add(new Residencia("Nuevo Día", "Tte Donato Alvarez 745", "Haedo", 
+        "Javier Gonzalez", false, 80, 12, false, true));
 
         return residencias;
     }

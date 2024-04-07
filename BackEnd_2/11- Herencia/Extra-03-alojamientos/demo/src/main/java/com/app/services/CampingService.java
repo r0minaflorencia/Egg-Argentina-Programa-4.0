@@ -17,7 +17,7 @@ public class CampingService {
         String nombre = "La Arbolada";
         String direccion = "Bella Vista 123";
         String localidad = "Rafael Castillo";
-        String gerente = "El gerent";
+        String gerente = "Lucía Martínez";
         boolean esPrivado = true;
         boolean tieneRestaurante = true;
         double metrosCuadrados = 26.0;
@@ -30,8 +30,14 @@ public class CampingService {
         return laArbolada;
     }
 
-    public ArrayList<Camping> guardar() {
-        // campings.add(null);
+    public ArrayList<Camping> lista() {
+
+        campings.add(crear());
+
+        campings.add(new Camping("Vida Verde", "Boulevard Gesell 123", "Villa Gesell", 
+        "Candela Martínez", true, 800,
+        100, 10, true));
+
         return campings;
     }
 

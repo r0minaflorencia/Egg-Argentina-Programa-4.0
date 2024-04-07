@@ -42,7 +42,7 @@ public final class Residencia extends ExtraHotel {
 
     @Override
     public String toString() {
-        return ", cantidad de habitaciones: " + cantidadHabitaciones + ", ¿tiene descuento?" + tieneDescuento
+        return super.toString() + ", cantidad de habitaciones: " + cantidadHabitaciones + ", ¿tiene descuento?" + tieneDescuento
                 + ", ¿tiene campo deportivo?" + tieneCampoDeportivo + "]";
     }
 

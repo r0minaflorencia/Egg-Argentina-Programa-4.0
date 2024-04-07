@@ -17,12 +17,12 @@ public class CuatroEstrellasService {
         String nombre = "Four Seasons";
         String direccion = "Av Juramento 456";
         String localidad = "Belgrano";
-        String gerente = "G-rente";
+        String gerente = "Gabriel Franco";
         int cantidadHabitaciones = 50;
         int cantidadCamas = 150;
         int cantidadPisos = 16;
         String gimnasio = "Good Life";
-        String restaurante = "Food Hacks";
+        String restaurante = "FoodHacks";
 
         CuatroEstrellas fourSeasons = new CuatroEstrellas(nombre, direccion, localidad, gerente, cantidadHabitaciones,
                 cantidadCamas, cantidadPisos, cantidadCamas, gimnasio, restaurante, cantidadPisos);
@@ -31,9 +31,9 @@ public class CuatroEstrellasService {
 
     }
 
-    public ArrayList<CuatroEstrellas> guardar() {
+    public ArrayList<CuatroEstrellas> lista() {
 
-        //hotelesCuatroEstrellas.add();
+        hotelesCuatroEstrellas.add(crear());
 
         return hotelesCuatroEstrellas;
     }

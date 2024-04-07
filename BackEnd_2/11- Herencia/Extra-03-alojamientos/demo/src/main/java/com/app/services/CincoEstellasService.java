@@ -35,8 +35,8 @@ public class CincoEstellasService {
         return alvearPalace;
     }
 
-    public ArrayList<CincoEstrellas> guardar() {
-        // hotelesCincoEstrellas.add(null);
+    public ArrayList<CincoEstrellas> lista() {
+        hotelesCincoEstrellas.add(crear());
         return hotelesCincoEstrellas;
     }
 
