@@ -26,8 +26,8 @@ public class Main {
 
         for (Edificio e : edificios) {
             System.out.println(e.toString());
-            e.calcularSuperficie();
-            e.calcularVolumen();
+            e.calcularSuperficie(e.getLargo(), e.getAncho());
+            e.calcularVolumen(e.getLargo(), e.getAncho(), e.getAltura());
             if (e instanceof EdificioDeOficinas) {
                ((EdificioDeOficinas) e).cantPersonas();
             } else if (e instanceof Polideportivo) {

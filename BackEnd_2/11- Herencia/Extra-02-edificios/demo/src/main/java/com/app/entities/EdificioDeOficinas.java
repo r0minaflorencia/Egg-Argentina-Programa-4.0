@@ -27,12 +27,12 @@ public class EdificioDeOficinas extends Edificio {
     }
 
     @Override
-    public void calcularSuperficie() {
+    public void calcularSuperficie(double largo, double ancho) {
         System.out.println("La superficie del edificio de oficinas es de " + (largo * ancho));
     }
 
     @Override
-    public void calcularVolumen() {
+    public void calcularVolumen(double largo, double ancho, double altura) {
         System.out.println("El volumen del edificio es de " + (largo * ancho * altura));
     }
 

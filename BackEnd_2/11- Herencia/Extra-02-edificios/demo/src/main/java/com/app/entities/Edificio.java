@@ -13,8 +13,8 @@ public abstract class Edificio {
         this.altura = altura;
     }
 
-    public abstract void calcularSuperficie();
-    public abstract void calcularVolumen();
+    public abstract void calcularSuperficie(double largo, double ancho);
+    public abstract void calcularVolumen(double largo, double ancho, double altura);
 
     public double getAncho() {
         return ancho;
